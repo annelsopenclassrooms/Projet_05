@@ -15,3 +15,24 @@ students = {
          'Histoire': 78
      }
 }
+
+student = input("Entrez le nom de l’étudiant : ")
+
+print(f"Nom de l'étudiant: {student}")
+
+try:
+     total_grade = 0
+     nb_grade = 0
+     for subject, grade in students[student].items():
+          print (f"{subject}: {grade}")
+          total_grade = total_grade + grade
+          nb_grade = nb_grade +1
+
+     avg = total_grade/nb_grade
+
+     print(f"La moyenne des notes de {student} est : {avg:.2f}")
+
+
+except KeyError:
+     print(f"L'étudiant {student} n'existe pas dans la liste.")
+
